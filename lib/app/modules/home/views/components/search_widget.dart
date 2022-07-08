@@ -9,10 +9,12 @@ import '../../controllers/home_controller.dart';
 class SearchWidget extends StatelessWidget {
  const SearchWidget({
     Key? key,
-    required this.controller
+    required this.controller,
+   this.onSubmitted,
   }) : super(key: key);
 
   final HomeController controller;
+  final ValueChanged<String>? onSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class SearchWidget extends StatelessWidget {
         child: TextField(
           controller: controller.searchController.value,
           cursorColor: AppColors.colorWhite,
-          onSubmitted: (stg) => controller.fetchSearchMovies(stg),
+          onSubmitted: onSubmitted,
           decoration: InputDecoration(
             border: InputBorder.none,
             enabledBorder: InputBorder.none,

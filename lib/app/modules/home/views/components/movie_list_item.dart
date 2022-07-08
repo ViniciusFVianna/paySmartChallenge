@@ -95,8 +95,11 @@ class MovieListItem extends StatelessWidget {
                       ),
                     ),
 
-                    Text(movie!.releaseDate != null
-                      ? DateFormat('dd/MM/yyyy').format(DateTime.parse(movie!.releaseDate.toString()))
+                    Text( movie != null
+                      && movie!.releaseDate != null
+                    && movie!.releaseDate!.isNotEmpty
+                      ? DateFormat('dd/MM/yyyy').format(DateTime.parse(
+                        '${movie?.releaseDate}'))
                       : '00/00/0000',
                       style: AppTextStyles.paragraph.copyWith(
                         color: AppColors.colorWhite,

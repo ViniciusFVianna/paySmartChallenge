@@ -159,8 +159,10 @@ class MovieDetailView extends GetView<MovieDetailController> {
 
                            const SizedBox(width: 2,),
 
-                           Text(
-                             DateFormat('dd/MM/yyyy').format(DateTime.parse(controller.movieDetail.value.releaseDate.toString())),
+                           Text(controller.movieDetail.value.releaseDate != null
+                             && controller.movieDetail.value.releaseDate!.isNotEmpty
+                             ? DateFormat('dd/MM/yyyy').format(DateTime.parse(controller.movieDetail.value.releaseDate.toString()))
+                             : '00/00/0000',
                              style: AppTextStyles.paragraph.copyWith(
                                color: AppColors.colorWhite,
                              ),

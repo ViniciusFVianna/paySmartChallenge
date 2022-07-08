@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:challenge_movies/app/data/models/query_paginated.dart';
 import 'package:challenge_movies/app/data/provider/movies_provider.dart';
@@ -7,6 +6,7 @@ import 'package:dartz/dartz.dart';
 
 import '../models/MovieDetail.dart';
 import '../models/movie.dart';
+import '../models/pagination_filter.dart';
 import '../provider/movies_provider.dart';
 import 'i_movies_repository.dart';
 
@@ -15,9 +15,9 @@ class MoviesRepository implements IMoviesRepository {
   MoviesRepository(this.provider);
 
   @override
-  Future<Either<ErrorResponse, QueryPaginated<Movie>>> getMovies() async {
+  Future<Either<ErrorResponse, QueryPaginated<Movie>>> getMovies(PaginationFilter? filter) async {
     try{
-      final resp = await provider.getMovies();
+      final resp = await provider.getMovies(filter);
       Map<String, dynamic> data = resp.body;
 
       if (data['success'] != false) {
@@ -72,9 +72,9 @@ class MoviesRepository implements IMoviesRepository {
   }
 
   @override
-  Future<Either<ErrorResponse, QueryPaginated<Movie>>> getSearchMovies(String query) async {
+  Future<Either<ErrorResponse, QueryPaginated<Movie>>> getSearchMovies(PaginationFilter? filter) async {
     try{
-      final resp = await provider.getSearchMovies(query);
+      final resp = await provider.getSearchMovies(filter);
       Map<String, dynamic> data = resp.body;
 
       if (data['success'] != false) {

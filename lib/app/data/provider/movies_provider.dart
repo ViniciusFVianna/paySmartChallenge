@@ -1,14 +1,20 @@
 import 'package:challenge_movies/app/utilities/constants_strings.dart';
 import 'package:get/get.dart';
 
+import '../models/pagination_filter.dart';
+
 class MoviesProvider extends GetConnect{
-  Future<Response> getMovies() async {
-    String url = ConstantsStrings.upcomingEndPoint.replaceAll(':api_key', ConstantsStrings.apiKey);
+  Future<Response> getMovies(PaginationFilter? filter) async {
+    String url = ConstantsStrings.upcomingEndPoint
+        .replaceAll(':api_key', ConstantsStrings.apiKey);
     final header = {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer ${ConstantsStrings.accessToken}'
     };
 
+    if (filter != null) {
+      url += filter.toString();
+    }
     print(url);
 
     return await get(url, headers: header);
@@ -25,23 +31,21 @@ class MoviesProvider extends GetConnect{
 
     print(url);
 
-    return await get(url, headers: header);
+    return await get(url, headers: header, );
   }
 
-  Future<Response> getSearchMovies(String queryString) async {
+  Future<Response> getSearchMovies(PaginationFilter? filter) async {
     String url = ConstantsStrings.searchMovieEndPoint
-        .replaceAll(':api_key', ConstantsStrings.apiKey)
-        .replaceAll(':query_key', queryString.replaceAll(' ', "%20"));
+        .replaceAll(':api_key', ConstantsStrings.apiKey);
     final header = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ${ConstantsStrings.accessToken}'
     };
-    final query = {
-      "query": queryString
-    };
-
+    if (filter != null) {
+      url += filter.toString();
+    }
     print(url);
 
-    return await get(url, headers: header, query: query);
+    return await get(url, headers: header);
   }
 }
