@@ -2,8 +2,8 @@ class ConstantsStrings {
   static const String baseUrl = 'https://api.themoviedb.org';
   static const String baseImageUrl = 'https://image.tmdb.org/t/p/original/';
   static const String v3 = '3';
-  static const String apiKey = '2259be502e6fdf62c184d9ad58df647ec';
-  static const String accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMjU5YmU1MDJlNmZkZjYyYzE4NGQ5YWQ1OGRmNjQ3ZSIsInN1YiI6IjYyYzRhM2NkOTY3MmVkMjNjZWZmZWNiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Kfhsb5MP_Pg8jybPmdNb6yDhfOfZ9EWIPbBMLrbUc3U';
+  static const String apiKey = 'API_KEY';
+  static const String accessToken = 'ACCESS_TOKEN';
 
 
   static const String movieEndPoint = '$baseUrl/$v3/movie/:movie_id?:api_key&language=pt-BR';
