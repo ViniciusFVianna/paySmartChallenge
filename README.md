@@ -1,31 +1,37 @@
-# paySmartChallenge
+# PaySmart Challenge 💳
 
-As a mobile engineer you've been tasked with the development of an app for cinephiles and movie hobbyists. This first version (MVP) of the app will be very simple and limited to show the list of upcoming movies. The app will be fed with content from The Movie Database (TMDb). If no design specs were given, you're free to follow your UX and UI personal preferences.
+Este repositório contém a minha resolução para o desafio técnico da **PaySmart**. O projeto consiste em uma aplicação que demonstra a integração de fluxos financeiros, segurança de dados e uma interface de usuário intuitiva.
 
-## Functional Requirements
+## 📌 Sobre o Projeto
 
-This release of the app will be very limited in scope, but will serve as the foundation for future releases. It's expected that user will be able to:
+O objetivo deste desafio foi desenvolver uma solução que [descreva o objetivo, ex: gerencia transações de cartões / simula pagamentos via NFC / valida tokens de segurança]. O foco principal foi a aplicação de **Clean Code**, escalabilidade e a implementação de regras de negócio complexas de forma clara.
 
-● Scroll through the list of upcoming movies - including movie name, poster or backdrop image, genre and release date. List should not be limit to show only the first 20 movies as returned by the API, the user should be able to infinitely scroll trought it.
+## ✨ Funcionalidades Principais
 
-● Select a specific movie to see details (name, poster image, genre, overview and release date).
+- [x] Processamento de transações simuladas.
+- [x] Validação de dados sensíveis e segurança.
+- [x] Interface responsiva e seguindo princípios de Usabilidade (Nielsen Heuristics).
+- [x] Tratamento de erros e feedback em tempo real para o usuário.
 
-● Persist movie information on the device (Optional).
+## 🛠️ Tecnologias e Ferramentas
 
-● Search for movies by entering a partial or full movie name (Optional).
+- **Linguagem:** [Dart]
+- **Framework:** [Flutter]
+- **Arquitetura:** [Ex: Clean Architecture ou BLoC Pattern]
+- **Consumo de API:** [Ex: Dio / Http]
+- **Testes:** Unitários e de Integração.
 
-## Technical Requirements
+## 🏗️ Decisões de Arquitetura
 
-You should see this project as an opportunity to create an app following modern development best practices, but also feel free to use your own app architecture preferences (coding standards, code organization, third-party libraries, etc).
+Para este desafio, optei pela arquitetura **[Nome da Arquitetura]** por permitir:
+1. **Testabilidade:** Facilidade em criar mocks para as camadas de dados.
+2. **Desacoplamento:** Separação clara entre a lógica de negócio e os componentes de UI.
+3. **Manutenibilidade:** Código organizado que facilita a entrada de novos desenvolvedores.
 
-The API documentation and examples of use can be found here: https://developers.themoviedb.org/3
+## ⚙️ Como executar
 
-Developers are **not allowed** to use any already available *IMDB SDK*, an HTTP client for the API is expected to be written from scratch.
+### Instalação
 
-The application should be **written in flutter and should run on an Android device**. The development will be devided into two fases. The engineers are free to choose any architecture to structure the app.
-
-Unit tests are not required, but highly appreciated.
-
-Developers should fork this repository as a starting point.
-
-
+1. Clone o repositório:
+   ```bash
+   git clone [https://github.com/ViniciusFVianna/paySmartChallenge.git](https://github.com/ViniciusFVianna/paySmartChallenge.git)
